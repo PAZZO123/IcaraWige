@@ -1,0 +1,266 @@
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IcaraWige</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header Section */
+        header {
+            background: #1a1a2e;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+        }
+
+        header h1 {
+            font-size: 24px;
+            color: #1fb7ff;
+            margin-left: 10px;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #1fb7ff;
+        }
+
+        nav a:last-child {
+            background: #1fb7ff;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #2f2f3b;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .hero .highlight {
+            color: #1fb7ff;
+        }
+
+        .hero img {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        /* Main Section */
+        main {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        main h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .card h4 {
+            font-size: 18px;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .card button {
+            background: #1fb7ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            background: #1578c9;
+        }
+
+        /* Footer Section */
+        footer {
+            background: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        footer .footer-links {
+            margin: 10px 0;
+        }
+
+        footer .footer-links a {
+            color: #1fb7ff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'images/logo.svg'%}" alt="Logo">
+            <h1>IcaraWige</h1>
+        </div>
+        <nav>
+            <a href="{% url 'contact' %}">Contact Us</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'topic' %}">Find Course</a>
+            <a href="{% url 'login' %}">Log in</a>
+            <a href="{% url 'home' %}">Home</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>
+            "Ensure Code <span class="highlight">Quality</span> and Gain Coding-knowledge <span class="highlight">Through Connecting</span> with Other Programmers Across the World Today!"
+        </h2>
+        <img id="hero-image" src="{% static 'images/thl.jpeg' %}" alt="Hero Image">
+    </section>
+
+    <main>
+        <h3>Meet The Expert Programmer in Your Crush Programming Language</h3>
+        <div class="card-container">
+            <div class="card">
+                <img src="{% static 'images/thcod.jpeg' %}" alt="Become Member">
+                <h4>Become Member Today</h4>
+                <p>To work with our website, you have to be a member of IcaraWige Community. If you are not already, do not hesitate to join!</p>
+                <button onclick="redirectToLogin()">Register Now</button>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/thco.jpeg' %}" alt="Improve Your Skills">
+                <h4>Improve Your Coding Skills</h4>
+                <p>Improve your coding skills by teaming with expert programmers all over the world and gaining new techniques.</p>
+                <button onclick="redirectToLogin()">Reach Us Now</button>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/thc.jpeg' %}" alt="Start Programming">
+                <h4>You Are Not Yet Starting Programming?</h4>
+                <p>Get inspired with successful programmers. They will help you from zero to hero, and you will start enjoying programming today!</p>
+                <button onclick="redirectToLogin()">Start Now</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy;2025 IcaraWige | Copyright sky2</p>
+        <p>Important Links</p>
+        <div class="footer-links">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'login' %}">Log In</a>
+            <a href="{% url 'contact' %}">Contact Us</a>
+            <a href="{% url 'topic' %}">Find course</a> <br>
+      
+        <p>Contact: <a href="mailto:icarawige@gmail.com">icarawige@gmail.com</a></p>
+    </div>
+    <p>DESIGNED BY Engineer:M.Patrick </p>
+    </footer>
+
+    <script>
+        // Hero Image Carousel
+        const heroImage = document.getElementById('hero-image');
+        const images = [
+            "{% static 'images/thl.jpeg' %}",
+            "{% static 'images/thco.jpeg' %}",
+            "{% static 'images/thcod.jpeg' %}",
+             "{% static 'images/thc1.jpeg' %}",
+             "{% static 'images/thc.jpeg' %}",
+             "{% static 'images/thc3.jpeg' %}",
+             "{% static 'images/thc4.jpeg' %}",
+             "{% static 'images/thc5.jpeg' %}",
+        ];
+        let currentIndex = 0;
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            heroImage.src = images[currentIndex];
+        }, 3000);
+
+        // Redirect to login function
+        function redirectToLogin() {
+            window.location.href = "{% url 'register' %}";
+        }
+    </script>
+</body>
+</html>
+{% endblock content %}

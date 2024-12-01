@@ -1,0 +1,163 @@
+
+{%block content%}
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Carrot Hub</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        .header {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+     
+        header h1 {
+            font-size: 24px;
+            color: #1fb7ff;
+            margin-left: 10px;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .header a:hover {
+            text-decoration: underline;
+        }
+
+        /* About Us Section */
+        .about-section {
+            background-color: white;
+            margin: 20px auto;
+            padding: 30px 20px;
+            border-radius: 10px;
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 20px;
+            color: #1fb7ff;
+            margin-bottom: 10px;
+        }
+
+        .about-section h3 {
+            color: #1fb7ff;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .about-section img {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 700px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        .footer p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+    
+        <div class="logo">
+            <img src="{% static 'images/logo.svg'%}" alt="Logo">
+            <h1>IcaraWige</h1>
+        </div>
+        <nav>
+            <a href="{%url 'land'%}">Home</a>
+            <a href="{%url 'register'%}">Join</a>
+        </nav>
+    </header>
+
+    <!-- About Us Section -->
+    <section class="about-section">
+        <h2>Let's grow together. Let's code the future</h2>
+        <h2>HELPLINE</h2>
+        <p>
+           <center> For any enquiry don’t hesitate to reach us through<br>
+
+            Toll Free: 3441<br>
+            Whatsapp: +250781484407<br>
+            E-mail: icarawigep@gmail.com<br>
+            
+            or Visit our office at Kicukiro, Gatenga<br>
+            KK231ST</center>
+            
+        </p>
+        <p>
+         <center>  <strong>Learn:</strong>  Access resources to grow in your preferred programming languages and technologies.<br>
+            <strong>Connect:</strong> : Join a global community of developers who share your passion for innovation.<br>
+            <strong>Collaborate:</strong>  Work on exciting projects, share ideas, and solve real-world problems together.</center>
+                    </p>
+        <img src="{% static "images/thl.jpeg" %}" alt="icarawige">
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© IcaraWige 2025</p>
+    </footer>
+
+</body>
+</html>
+
+{%endblock content%}
